@@ -46,7 +46,7 @@ while True:
             print(f"ispen: {ispen}")
 
     if ispen :
-        pygame.draw.circle(bg, (0, 0, 0), (x, y), 15, 0)
+        pygame.draw.circle(bg, (0, 0, 0), (x, y), 1, 0)
 
 
         # 繪製畫布與視窗
