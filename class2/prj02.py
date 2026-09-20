@@ -32,6 +32,7 @@ pygame.draw.ellipse(bg, (225, 0, 0), [400, 160, 60, 35], 5)
 # line, (畫布,顏色,[start],[end],線寬)
 pygame.draw.line(bg, (225, 0, 225), [280, 220], [320, 220], 3)
 ######################循環偵測######################
+ispen=False
 while True:
     x,y = pygame.mouse.get_pos()
     for event in pygame.event.get():
@@ -39,9 +40,17 @@ while True:
             sys.exit() # 離開遊戲
 
         if event.type == pygame.MOUSEBUTTONDOWN: # 如果按下鼠標左鍵
+            print("click!") # 輸出滑鼠座標
             print("Mouse button down at:", x, y) # 輸出滑鼠座標
-    # 繪製畫布與視窗
+            ispen = not(ispen)
+            print(f"ispen: {ispen}")
+
+    if ispen :
+        pygame.draw.circle(bg, (0, 0, 0), (x, y), 15, 0)
+
+
+        # 繪製畫布與視窗
     screen.blit(bg, (0, 0))
-    # 更新視窗
+        # 更新視窗
     pygame.display.update()
     
