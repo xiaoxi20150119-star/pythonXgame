@@ -23,6 +23,7 @@ class Brick:
 
 ######################初始化設定/ initialize settings######################
 pygame.init()
+FPS = pygame.time.Clock()
 ######################載入圖片/ load images######################
 
 ######################遊戲視窗設定/ game window settings######################
@@ -57,6 +58,7 @@ pad = Brick(0,  bg_y-48, bricks_w, bricks_h, (255, 255, 255))
 
 ######################主程式/ main program######################
 while True:
+    FPS.tick(60)
     screen.fill((0, 0, 0))
     mouse_x, mouse_y = pygame.mouse.get_pos()
     pad.rect.x = mouse_x-pad.rect.width//2
